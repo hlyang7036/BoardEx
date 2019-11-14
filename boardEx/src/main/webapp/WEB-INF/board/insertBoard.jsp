@@ -30,11 +30,11 @@
 				<td colspan="2" align="center">
 				<input type="submit" value="새글 등록"/></td>
 			</tr>
+			
 		</table>
-	
 	</form>
-	
 	<hr>
+	<a href="getBoardList">글 목록</a>
 </center>
 </body>
 </html>

@@ -31,9 +31,28 @@ public class BoardController {
 		return "insertBoard";
 	}
 	
-	@PostMapping("insertBoard")	// insertBoard 새글 등록
+	@PostMapping("/insertBoard")	// insertBoard 새글 등록
 	public String insertBoard(Board board) {
 		boardService.insertBoard(board);
 		return "redirect:getBoardList";
+	}
+	
+	@GetMapping("/getBoard")	// 글 상세보기
+	public String getBoard(Model model, Board board) {
+		
+		model.addAttribute("board", boardService.getBoard(board));
+		return "getBoard";
+	}
+	
+	@PostMapping("/updateBoard")
+	public String updateBoard(Board board) {
+		boardService.updateBoard(board);
+		return "forward:getBoardList";
+	}
+	
+	@GetMapping("/deleteBoard")
+	public String deleteBoard(Board board) {
+		boardService.deleteBoard(board);
+		return "forward:getBoardList";
 	}
 }
