@@ -8,9 +8,6 @@ public class BoardExApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BoardExApplication.class, args);
-		
 	}
-	
-	// tktktk
 
 }
