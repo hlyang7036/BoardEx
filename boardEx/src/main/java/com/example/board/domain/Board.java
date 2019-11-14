@@ -1,5 +1,7 @@
 package com.example.board.domain;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,7 +26,7 @@ public class Board {
 	private String writer;
 	private String content;
 	@Column(insertable = false, updatable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-	private String createDate;
+	private Date createDate;
 	@Column(insertable = false, updatable = false, columnDefinition = "bigint default 0")
 	private Long cnt;
 }
