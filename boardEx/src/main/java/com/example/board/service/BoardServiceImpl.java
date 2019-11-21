@@ -3,8 +3,6 @@ package com.example.board.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.example.board.domain.Board;
@@ -18,7 +16,7 @@ public class BoardServiceImpl implements BoardService {
 	
 	@Override
 	public List<Board> getBoardList(Board board){
-		return (List<Board>) boardRepo.findAllByOrderBySeqDesc();
+		return (List<Board>) boardRepo.findAll();
 	}
 	
 	@Override
@@ -41,4 +39,5 @@ public class BoardServiceImpl implements BoardService {
 	public void deleteBoard(Board board) {
 		boardRepo.deleteById(board.getSeq());
 	}
+	
 }
