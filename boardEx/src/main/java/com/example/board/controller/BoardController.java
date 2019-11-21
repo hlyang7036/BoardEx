@@ -43,16 +43,26 @@ public class BoardController {
 		model.addAttribute("board", boardService.getBoard(board));
 		return "getBoard";
 	}
+	@GetMapping("/updateBoard")	// 글 수정 페이지로 이동
+	public String updateBoard(Model model, Board board) {
+		model.addAttribute("board", boardService.getBoard(board));
+		return "updateBoard";
+	}
 	
-	@PostMapping("/updateBoard")
+	@PostMapping("/updateBoard")	// 글 수정
 	public String updateBoard(Board board) {
 		boardService.updateBoard(board);
 		return "forward:getBoardList";
 	}
 	
-	@GetMapping("/deleteBoard")
+	@GetMapping("/deleteBoard")	// 글 삭제
 	public String deleteBoard(Board board) {
 		boardService.deleteBoard(board);
 		return "forward:getBoardList";
+	}
+	@GetMapping("/hello")
+	public void hello(Model model) {
+		String str = "hello 타임리프";
+		model.addAttribute("greeting", str);
 	}
 }
