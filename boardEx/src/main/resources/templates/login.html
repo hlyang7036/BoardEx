@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>로그인 페이지</title>
 </head>
-<body>
-
+<body th:align="center">
+	<h1>Login</h1>
+	<form th:action="login" method="post">
+		<table th:align="center" border="1" th:cellpadding="0" th:cellspacing="0">
+			<tr>
+				<td bgcolor="gray" th:text="아이디"></td>
+				<td><input name="id" type="text" size="10"></td>
+			</tr>
+			<tr>
+				<td bgcolor="gray" th:text="비밀번호"></td>
+				<td><input name="password" type="password" size="10"></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<input th:type="submit" value="로그인">
+				</td>
+			</tr>		
+		</table>
+	</form>
 </body>
 </html>
