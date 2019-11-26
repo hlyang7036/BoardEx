@@ -20,3 +20,4 @@ public class MemberServiceImpl implements MemberService {
 		else return null;
 	}
 }
+	
