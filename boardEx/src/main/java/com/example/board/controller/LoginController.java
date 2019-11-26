@@ -8,6 +8,6 @@ public class LoginController {
 	
 	@GetMapping("/login")
 	public void login() {
-		
+		// 브렌치 정리
 	}
 }
