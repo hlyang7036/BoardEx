@@ -5,10 +5,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.example.board.domain.Member;
 import com.example.board.repository.MemberService;
 
+@SessionAttributes("member")
 @Controller
 public class LoginController {
 	
@@ -17,9 +19,9 @@ public class LoginController {
 	
 	@GetMapping("/login")
 	public void login() {
-		// 브렌치 정리
 	}
-	@PostMapping
+	
+	@PostMapping("/login")
 	public String login(Member member, Model model) {
 		Member findMember = memberService.getMember(member);
 			if (findMember!= null && findMember.getPassword().equals(member.getPassword())) {
