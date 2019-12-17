@@ -32,7 +32,8 @@
 		
 	</table>
 	<a th:href="@{/updateBoard(seq=${board.seq})}">글수정</a>&nbsp;&nbsp;&nbsp;
-	<a th:href="@{/deleteBoard(seq=${board.seq})}">글삭제</a>&nbsp;&nbsp;&nbsp;
+	<a th:if="${session['member'].role=='Role_admin'}"
+		th:href="@{/deleteBoard(seq=${board.seq})}">글삭제</a>&nbsp;&nbsp;&nbsp;
 	<a th:href="@{/getBoardList}">글목록</a>
 </body>
 </html>

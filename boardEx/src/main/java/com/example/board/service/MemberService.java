@@ -1,4 +1,4 @@
-package com.example.board.repository;
+package com.example.board.service;
 
 import com.example.board.domain.Member;
 
